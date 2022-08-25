@@ -2,4 +2,3 @@ YooMoney
 requests
 loguru
 python-dotenv
-pytest
