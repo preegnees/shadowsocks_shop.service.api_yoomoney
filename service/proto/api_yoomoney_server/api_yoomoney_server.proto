@@ -1,0 +1,25 @@
+syntax = "proto3";
+package api_yoomoney_service;
+option go_package = "./";
+
+message CheckReq {
+    string Label = 1;
+}
+message CheckResp {
+    bool Ok = 1;
+}
+
+message GetURLReq {
+    string Label = 1;
+    int64 Sum = 2;
+}
+message GetURLResp {
+    string URL = 1;
+}
+
+service PaymentService {
+    rpc Check (CheckReq) returns (CheckResp) {}
+    rpc GetURL (GetURLReq) returns (GetURLResp) {}
+}
+
+// py: python -m grpc_tools.protoc --proto_path=. --python_out=. --grpc_python_out=. api_yoomoney_server.proto
