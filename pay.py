@@ -6,7 +6,7 @@ def get_url(receiver: str, label: str, sum: str) -> str:
     quickpay = Quickpay(
         receiver=receiver,
         quickpay_form="shop",
-        targets=f"VPN subscription: {label}",
+        targets="VPN subscription",
         paymentType="",
         sum=sum,
         label=label
